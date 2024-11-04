@@ -6,7 +6,7 @@ OverwriteTableKeys(WorldUpgradeData,
 	{
 		Song_RandomSong = {
 			InheritFrom = { "DefaultSongItem" },
-			TrackName = "Song_RandomSong",
+			TrackName = "Song_RandomSongTrack",
 
 			Cost =
 			{
