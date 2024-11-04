@@ -4,7 +4,7 @@
     {
       Id = "Song_RandomSong"
       DisplayName = "Music Maker's choice"
-      Description = "Gives the Music Maker free reign to choose a new song for you each time you return to the crossroads. Currently playing: {#ItalicFormat}{$GameState.MusicMakerRandomizeMusicPlayerSongName}."
+      Description = "Gives the Music Maker free reign to choose a new song for you each time you return to the crossroads."
     }
   ]
 }
