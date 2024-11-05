@@ -1,5 +1,3 @@
-Top Import "config.lua"
-
 To "Scripts/AudioLogic.lua"
 Import "Scripts/AudioLogic.lua"
 
@@ -14,3 +12,10 @@ Import "Scripts/MusicPlayerPresentation.lua"
 
 To "Game/Text/en/HelpText.en.sjson"
 SJSON "Game/Text/HelpText.en.sjson"
+
+Load Priority 100
+
+:: reserved names
+To "Scripts/Main.lua"
+Top Import register.lua
+Top Import config.lua

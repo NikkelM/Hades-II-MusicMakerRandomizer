@@ -1,0 +1,11 @@
+{
+  "name": "Randomize_Music_Maker_Song_Choice",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/NikkelM/Hades-II-MusicMakerRandomizer",
+  "description": "Allow the Music Maker to choose a new, random song for you each time you return to the crossroads.",
+  "dependencies": [
+    "Hell2Modding-Hell2Modding-1.0.22",
+    "SGG_Modding-DemonDaemon-1.0.1",
+    "SGG_Modding-ModUtil-3.1.0"
+  ]
+}
