@@ -1,7 +1,7 @@
 {
   "namespace": "NikkelM",
   "name": "Randomize_Music_Maker_Song_Choice",
-  "version_number": "1.0.0",
+  "version_number": "1.0.1",
   "website_url": "https://github.com/NikkelM/Hades-II-MusicMakerRandomizer",
   "description": "Allow the Music Maker to choose a new, random song for you each time you return to the crossroads.",
   "dependencies": [
