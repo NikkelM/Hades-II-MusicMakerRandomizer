@@ -6,7 +6,9 @@ ModUtil.Path.Wrap("MusicianMusic", function(base, args)
 		local availableTracks = {}
 		if MusicMakerRandomize.Config.AllSongs then
 			-- Choose from all available tracks (even those not yet unlocked/visible to the player)
-			availableTracks = DeepCopyTable(ScreenData.MusicPlayer.Songs)
+			for _, songName in ipairs(ScreenData.MusicPlayer.Songs) do
+				table.insert(availableTracks, WorldUpgradeData[songName])
+			end
 		elseif GameState and GameState.WorldUpgrades then
 			-- Choose only from unlocked tracks
 			for _, songName in ipairs(ScreenData.MusicPlayer.Songs) do
