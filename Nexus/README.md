@@ -5,7 +5,12 @@ Can be configured to choose from all songs in the game, even those not yet unloc
 
 Will work with any songs added in the future.
 
-## Installation using Mod Importer
+## Installation
+
+The recommended way of modding Hades II is using Thunderstore.
+You can find this mod [here on Thunderstore](https://thunderstore.io/c/hades-ii/p/NikkelM/Randomize_Music_Maker_Song_Choice/).
+
+### Using Mod Importer
 
 - Download and extract the [Hades II Mod Importer](https://github.com/SGG-Modding/ModImporter/releases/latest) ([Nexus](https://www.nexusmods.com/hades2/mods/1)) into `Hades II\Content`
 - Download and extract the [Mod Util](https://github.com/SGG-Modding/ModUtil/releases/latest) into `Hades II\Content\Mods` (create the `Mods` folder if it doesn't exist)
