@@ -5,5 +5,13 @@ ModUtil.Path.Wrap("SelectMusicPlayerItem", function(base, screen, button)
 	CurrentRun.MusicMakerRandomizeTrackName = nil
 	GameState.MusicMakerRandomizeFriendlyPlayingSongString = ""
 
+	local components = button.Screen.Components
+	ModifyTextBox(
+		{
+			Id = components.InfoBoxDescription.Id,
+			Text = "Song_RandomSong_NothingPlaying",
+			UseDescription = true
+		})
+
 	base(screen, button)
 end)

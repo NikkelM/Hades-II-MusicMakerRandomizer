@@ -1,10 +1,15 @@
 {
   Texts = [
-    "_append"			
+    "_append"
     {
       Id = "Song_RandomSong"
       DisplayName = "Music Maker's choice"
-      Description = "Allow the Music Maker free reign to choose a new song for you each time you return to the crossroads. {$GameState.MusicMakerRandomizeFriendlyPlayingSongString}"
+      Description = "Allow the Music Maker to choose a new song for you each time you return to the crossroads. {$GameState.MusicMakerRandomizeFriendlyPlayingSongString}"
+    },
+    {
+      Id = "Song_RandomSong_NothingPlaying"
+      DisplayName = "Music Maker's choice"
+      Description = "Allow the Music Maker to choose a new song for you each time you return to the crossroads."
     }
   ]
 }
