@@ -1,4 +1,4 @@
--- After making changes here, you need to re-run modimporter.exe
+-- After making changes here, you need to re-run modimporter.exe (if not using Thunderstore)
 local config = {
 	-- Simply set this to false to disable the mod.
 	Enabled = true,
@@ -6,5 +6,6 @@ local config = {
 	-- This includes those you may not even know exist (e.g. from future regions or bosses).
 	AllSongs = false
 }
-MusicMakerRandomizer.config = config
+
+MusicMakerRandomizer.Config = config
 return config

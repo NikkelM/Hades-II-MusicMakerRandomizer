@@ -1,6 +1,9 @@
 # Randomize Music Maker Song Choice
 
-A mod for Hades II that adds a new song to the Music Maker, which will play a random available song each time you return to the crossroads.
+This Hades II mod adds a new song to the Music Maker, which will play a random available song each time you return to the crossroads.
+Can be configured to choose from all songs in the game, even those not yet unlocked/bought or discovered.
+
+Will work with any songs added in the future.
 
 ## Installation
 
@@ -17,7 +20,7 @@ To uninstall:
 ## Configuration
 
 By default, the mod will only randomize from unlocked songs. You can change this behaviour by setting the `AllSongs` option to `true` in `config.lua`.
-Spoiler Warning: Note that this will include songs that are not yet unlocked in the game, e.g. from future regions or bosses.
+**Spoiler Warning**: Note that this will include songs that are not yet unlocked in the game, e.g. from future regions or bosses.
 
 ## Compatibility
 
