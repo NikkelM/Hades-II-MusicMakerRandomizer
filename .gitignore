@@ -1,3 +1,6 @@
+# Thunderstore CLI build output
+build/
+
 # Compiled Lua sources
 luac.out
 
