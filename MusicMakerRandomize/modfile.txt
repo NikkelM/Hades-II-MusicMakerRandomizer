@@ -1,5 +1,8 @@
 Top Import "config.lua"
 
+To "Scripts/RunLogic.lua"
+Import "Scripts/RunLogic.lua"
+
 To "Scripts/MusicPlayerData.lua"
 Import "Scripts/MusicPlayerData.lua"
 
