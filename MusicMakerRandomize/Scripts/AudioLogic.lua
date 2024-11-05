@@ -21,7 +21,7 @@ ModUtil.Path.Wrap("MusicianMusic", function(base, args)
 			local chosenTrack = availableTracks[RandomInt(1, #availableTracks)]
 			CurrentRun.MusicMakerRandomizeTrackName = chosenTrack.TrackName
 			-- To update the description of the Song_RandomSong to include the friendly name of the chosen track
-			GameState.MusicMakerRandomizeFriendlyPlayingSongString = "{#Prev}Now playing {#ItalicFormat}" .. GetDisplayName({Text = chosenTrack.Name}) .. "{#Prev}."
+			GameState.MusicMakerRandomizeFriendlyPlayingSongString = "\n{#Prev}Now playing {#ItalicFormat}" .. GetDisplayName({Text = chosenTrack.Name}) .. "{#Prev}."
 		end
 
 		args.TrackName = CurrentRun.MusicMakerRandomizeTrackName
