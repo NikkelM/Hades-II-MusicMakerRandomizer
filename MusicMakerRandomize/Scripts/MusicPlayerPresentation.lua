@@ -12,7 +12,7 @@ ModUtil.Path.Wrap("MouseOverMusicPlayerItem", function(base, button)
 				Text = "Song_RandomSong_PlayingInfo",
 				UseDescription = true,
 				LuaKey = "TempTextData",
-				LuaValue = { MusicMakerRandomizeFriendlyPlayingSong = GameState.MusicMakerRandomizeFriendlyPlayingSong }
+				LuaValue = { PlayingSongFriendlyName = GameState.MusicMakerRandomizeFriendlyPlayingSong }
 			}
 		)
 	else

@@ -8,10 +8,9 @@ OverwriteTableKeys(WorldUpgradeData,
 			InheritFrom = { "DefaultSongItem" },
 			TrackName = "Song_RandomSongTrack",
 
-			-- Make it free, but use 0-cost to still play the unlock voiceline and mark it as new
 			Cost =
 			{
-				CosmeticsPoints = 0,
+				CosmeticsPoints = 10,
 			},
 
 			PreRevealVoiceLines =
@@ -21,7 +20,7 @@ OverwriteTableKeys(WorldUpgradeData,
 					UsePlayerSource = true,
 					Cooldowns =
 					{
-						{ Name = "MelMusicPlayerRequestSpeech", Time = 10 },
+						{ Name = "MelMusicPlayerRequestSpeech", Time = 2 },
 					},
 					{ Cue = "/VO/Melinoe_2356", Text = "Surprise!" },
 				},

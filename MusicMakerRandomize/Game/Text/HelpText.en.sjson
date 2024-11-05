@@ -4,7 +4,7 @@
     {
       Id = "Song_RandomSong_PlayingInfo"
       DisplayName = "Music Maker's choice"
-      Description = "Allow the Music Maker to choose a new song for you each time you return to the crossroads.\n Now playing {#ItalicFormat}{$TempTextData.MusicMakerRandomizeFriendlyPlayingSong}"
+      Description = "Allow the Music Maker to choose a new song for you each time you return to the crossroads.\n Now playing {#ItalicFormat}{$TempTextData.PlayingSongFriendlyName}"
     },
     {
       Id = "Song_RandomSong"
