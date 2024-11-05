@@ -3,7 +3,7 @@ if not MusicMakerRandomizer.Config.Enabled then return end
 ModUtil.Path.Wrap("SelectMusicPlayerItem", function(base, screen, button)
 	-- When the player pauses the random song, reset the chosen track so a new one can be chosen
 	CurrentRun.MusicMakerRandomizerTrackName = nil
-	GameState.MusicMakerRandomizerFriendlyPlayingSong = "Nothing..."
+	GameState.MusicMakerRandomizerFriendlyPlayingSong = "Nothing.."
 
 	base(screen, button)
 
