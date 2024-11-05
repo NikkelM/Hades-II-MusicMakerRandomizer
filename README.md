@@ -5,6 +5,8 @@ Can be configured to choose from all songs in the game, even those not yet unloc
 
 Will work with any songs added in the future.
 
+![Randomize Music Maker Song Choice](https://github.com/NikkelM/Hades-II-MusicMakerRandomizer/blob/main/images/MusicMakerRandomize_UnlockedNotPlaying.jpg)
+
 ## Configuration
 
 By default, the mod will only randomize from unlocked songs. You can change this behaviour by setting the `AllSongs` option to `true`.
