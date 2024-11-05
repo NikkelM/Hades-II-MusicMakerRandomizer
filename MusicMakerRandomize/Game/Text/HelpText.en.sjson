@@ -2,9 +2,14 @@
   Texts = [
     "_append"
     {
-      Id = "Song_RandomSong"
+      Id = "Song_RandomSong_PlayingInfo"
       DisplayName = "Music Maker's choice"
       Description = "Allow the Music Maker to choose a new song for you each time you return to the crossroads.\n Now playing {#ItalicFormat}{$TempTextData.MusicMakerRandomizeFriendlyPlayingSong}"
+    },
+    {
+      Id = "Song_RandomSong"
+      DisplayName = "Music Maker's choice"
+      Description = "Allow the Music Maker to choose a new song for you each time you return to the crossroads."
     }
   ]
 }
