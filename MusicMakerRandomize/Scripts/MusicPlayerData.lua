@@ -8,7 +8,11 @@ OverwriteTableKeys(WorldUpgradeData,
 			InheritFrom = { "DefaultSongItem" },
 			TrackName = "Song_RandomSongTrack",
 
-			-- Cost is free (unlocked by default)
+			-- Make it free, but use 0-cost to still play the unlock voiceline and mark it as new
+			Cost =
+			{
+				CosmeticsPoints = 0,
+			},
 
 			PreRevealVoiceLines =
 			{
