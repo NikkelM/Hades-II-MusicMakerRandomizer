@@ -1,6 +1,6 @@
-# MusicMakerRandomize
+# Randomize Music Maker Song Choice
 
-This mod adds a new song to the Music Maker, which will play a random available song each time you return to the crossroads.
+A mod for Hades II, which adds a new song to the Music Maker, which will play a random available song each time you return to the crossroads.
 
 ## Installation
 
