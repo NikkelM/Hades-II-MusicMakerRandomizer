@@ -7,6 +7,7 @@ ModUtil.Path.Wrap("SelectMusicPlayerItem", function(base, screen, button)
 
 	base(screen, button)
 
+	-- Update the description with the new currently playing song, or "Nothing..." if the player paused the random song
 	local components = button.Screen.Components
 	ModifyTextBox(
 		{
