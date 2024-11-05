@@ -4,12 +4,7 @@
     {
       Id = "Song_RandomSong"
       DisplayName = "Music Maker's choice"
-      Description = "Allow the Music Maker to choose a new song for you each time you return to the crossroads. {$GameState.MusicMakerRandomizeFriendlyPlayingSongString}"
-    },
-    {
-      Id = "Song_RandomSong_NothingPlaying"
-      DisplayName = "Music Maker's choice"
-      Description = "Allow the Music Maker to choose a new song for you each time you return to the crossroads."
+      Description = "Allow the Music Maker to choose a new song for you each time you return to the crossroads. {$TempTextData.MusicMakerRandomizeFriendlyPlayingSongString}"
     }
   ]
 }

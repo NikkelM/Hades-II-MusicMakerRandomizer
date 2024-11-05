@@ -9,9 +9,20 @@ ModUtil.Path.Wrap("SelectMusicPlayerItem", function(base, screen, button)
 	ModifyTextBox(
 		{
 			Id = components.InfoBoxDescription.Id,
-			Text = "Song_RandomSong_NothingPlaying",
-			UseDescription = true
+			Text = button.Data.Name, -- "Song_RandomSong_NothingPlaying",
+			UseDescription = true,
+			LuaKey = "TempTextData",
+			LuaValue = { MusicMakerRandomizeFriendlyPlayingSongString = GameState.MusicMakerRandomizeFriendlyPlayingSongString }
 		})
 
 	base(screen, button)
+
+	ModifyTextBox(
+		{
+			Id = components.InfoBoxDescription.Id,
+			Text = button.Data.Name,
+			UseDescription = true,
+			LuaKey = "TempTextData",
+			LuaValue = { MusicMakerRandomizeFriendlyPlayingSongString = GameState.MusicMakerRandomizeFriendlyPlayingSongString }
+		})
 end)
