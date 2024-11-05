@@ -4,8 +4,8 @@ This mod adds a new song to the Music Maker, which will play a random available 
 
 ## Installation
 
-- Extract the [Hades II Mod Importer](https://github.com/SGG-Modding/ModImporter/releases/latest) ([Nexus](https://www.nexusmods.com/hades2/mods/1)) into `Hades II\Content`
-- Extract the [Mod Util](https://github.com/SGG-Modding/ModUtil/releases/latest) into `Hades II\Content\Mods` (create the `Mods` folder if it doesn't exist)
+- Download and extract the [Hades II Mod Importer](https://github.com/SGG-Modding/ModImporter/releases/latest) ([Nexus](https://www.nexusmods.com/hades2/mods/1)) into `Hades II\Content`
+- Download and extract the [Mod Util](https://github.com/SGG-Modding/ModUtil/releases/latest) into `Hades II\Content\Mods` (create the `Mods` folder if it doesn't exist)
 - Extract `MusicMakerRandomize.zip` into `Hades II\Content\Mods`
 - Run `modimporter.exe`
 
@@ -15,7 +15,7 @@ To uninstall:
 
 ## Configuration
 
-By default, the mod will only randomize from unlocked songs. You can change this behaviour by setting the `AllSongs` option to true in `config.lua`.
+By default, the mod will only randomize from unlocked songs. You can change this behaviour by setting the `AllSongs` option to `true` in `config.lua`.
 Spoiler Warning: Note that this will include songs that are not yet unlocked in the game, e.g. from future regions or bosses.
 
 ## Compatibility
