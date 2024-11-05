@@ -1,4 +1,4 @@
-if not MusicMakerRandomize.Config.Enabled then return end
+if not MusicMakerRandomizer.Config.Enabled then return end
 
 table.insert(ScreenData.MusicPlayer.Songs, 1, "Song_RandomSong")
 

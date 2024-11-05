@@ -1,4 +1,4 @@
-if not MusicMakerRandomize.Config.Enabled then return end
+if not MusicMakerRandomizer.Config.Enabled then return end
 
 ModUtil.Path.Wrap("MouseOverMusicPlayerItem", function(base, button)
 	base(button)
@@ -12,7 +12,7 @@ ModUtil.Path.Wrap("MouseOverMusicPlayerItem", function(base, button)
 				Text = "Song_RandomSong_PlayingInfo",
 				UseDescription = true,
 				LuaKey = "TempTextData",
-				LuaValue = { PlayingSongFriendlyName = GameState.MusicMakerRandomizeFriendlyPlayingSong }
+				LuaValue = { PlayingSongFriendlyName = GameState.MusicMakerRandomizerFriendlyPlayingSong }
 			}
 		)
 	else
