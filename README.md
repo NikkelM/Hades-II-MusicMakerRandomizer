@@ -5,7 +5,7 @@ Can be configured to choose from all songs in the game, even those not yet unloc
 
 Will work with any songs added in the future.
 
-![Randomize Music Maker Song Choice](https://github.com/NikkelM/Hades-II-MusicMakerRandomizer/blob/main/images/MusicMakerRandomize_UnlockedNotPlaying.jpg)
+![Randomize Music Maker Song Choice](https://github.com/user-attachments/assets/08a5b8aa-a4cb-422f-9f67-e8dabcbc646b)
 
 ## Configuration
 
