@@ -4,15 +4,9 @@ ModUtil.Path.Wrap("MusicianMusic", function(base, args)
 	-- If the chosen song is Song_RandomSong and the Music Maker not already playing something, choose a random track and save it in the currentRun to reset it only after a run ends
 	if args.TrackName == "Song_RandomSongTrack" then
 		local availableTracks = {}
-		if MusicMakerRandomizer.Config.AllSongs then
-			-- Choose from all available tracks (even those not yet unlocked/visible to the player)
+		if GameState and GameState.WorldUpgrades then
 			for _, songName in ipairs(ScreenData.MusicPlayer.Songs) do
-				table.insert(availableTracks, WorldUpgradeData[songName])
-			end
-		elseif GameState and GameState.WorldUpgrades then
-			-- Choose only from unlocked tracks
-			for _, songName in ipairs(ScreenData.MusicPlayer.Songs) do
-				if songName ~= "Song_RandomSong" and GameState.WorldUpgrades[songName] then
+				if songName ~= "Song_RandomSong" and (GameState.WorldUpgrades[songName] or MusicMakerRandomizer.Config.AllSongs) then
 					table.insert(availableTracks, WorldUpgradeData[songName])
 				end
 			end
