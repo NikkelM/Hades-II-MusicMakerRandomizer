@@ -26,4 +26,5 @@ OverwriteTableKeys(WorldUpgradeData,
 				},
 			},
 		},
-	})
+	}
+)
