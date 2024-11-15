@@ -5,7 +5,7 @@ Can be configured to choose from all songs in the game, even those not yet unloc
 
 Will work with any songs added in the future.
 
-![Randomize Music Maker Song Choice](https://github.com/user-attachments/assets/08a5b8aa-a4cb-422f-9f67-e8dabcbc646b)
+![Randomize Music Maker Song Choice](https://github.com/user-attachments/assets/0a656e46-7358-4471-a552-b9c0d7d93569)
 
 ## Configuration
 
