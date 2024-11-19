@@ -18,7 +18,3 @@ To disable the mod through the config, simply set `Enabled` to `false`.
 
 This mod should be compatible with all other mods, including those adding songs to the Music Maker or modifying it in other ways.
 If this is not the case for a mod, please let me know by opening an issue.
-
-This mod was originally created for Mod Importer (available on Nexus [here](https://www.nexusmods.com/hades2/mods/60)), and is compatible with Thunderstore through DemonDaemon.
-
-You can find the mod on [Thunderstore](https://thunderstore.io/c/hades-ii/p/NikkelM/Randomize_Music_Maker_Song_Choice/) (recommended) and [Nexus](https://www.nexusmods.com/hades2/mods/60).
