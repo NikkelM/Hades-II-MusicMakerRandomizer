@@ -5,7 +5,7 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "NikkelM"
 name = "Randomize_Music_Maker_Song_Choice"
-versionNumber = "1.0.3"
+versionNumber = "1.0.4"
 description = "Allow the Music Maker to choose a new, random song for you each time you return to the crossroads."
 websiteUrl = "https://github.com/NikkelM/Hades-II-MusicMakerRandomizer"
 containsNsfwContent = false
