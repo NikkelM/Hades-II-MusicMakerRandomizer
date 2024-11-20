@@ -24,54 +24,57 @@ modutil.mod.Path.Wrap("SelectMusicPlayerItem", function(base, screen, button)
 	end
 end)
 
--- Add the pin component to all buttons, regardless if purchased or not
+-- Add the pin component to all buttons (except the random song, it cannot be favourited), regardless if purchased or not
 modutil.mod.Path.Wrap("MusicPlayerDisplayItems", function(base, screen)
 	base(screen)
 
+	-- Repeat the loop from the base function. The order will be the same
 	screen.NumItems = 0
 	local components = screen.Components
 
 	for i, songName in ipairs(screen.Songs) do
 		local songData = game.WorldUpgradeData[songName]
-		print(songName)
+
+		-- If the song has not been discovered yet, skip it
 		if songData.GameStateRequirements == nil or game.IsGameStateEligible(songData, songData.GameStateRequirements) then
 			screen.NumItems = screen.NumItems + 1
 			local pinButtonKey = "PinIcon" .. screen.NumItems
-			print(pinButtonKey)
 
-			if components[pinButtonKey] ~= nil then
-				print("Pin button already exists")
-				print(pinButtonKey)
+			-- If the song already has a pin icon, skip it
+			if components[pinButtonKey] ~= nil or songName == "Song_RandomSong" then
 				goto continue
 			end
 
 			local purchaseButtonKey = "PurchaseButton" .. screen.NumItems
 			local button = components[purchaseButtonKey]
 
-			-- Pin icon
+			-- Create a "Pin" component for the button, which will be used for the favourite icon
 			components[pinButtonKey] = game.CreateScreenComponent({
 				Name = "BlankObstacle",
-				Group = screen.ComponentData
-						.DefaultGroup,
+				Group = screen.ComponentData.DefaultGroup,
 				Alpha = 0.0,
 				Scale = screen.PurchaseButtonScaleY
 			})
+
 			Attach({
 				Id = components[pinButtonKey].Id,
 				DestinationId = components[purchaseButtonKey].Id,
-				OffsetX = screen
-						.PinOffsetX,
+				OffsetX = screen.PinOffsetX,
 				OffsetY = game.UIData.PinIconListOffsetY * screen.PurchaseButtonScaleY
 			})
+
 			components[purchaseButtonKey].PinButtonId = components[pinButtonKey].Id
+
+			-- The song has already been favourited, add the icon
 			if game.HasStoreItemPin(button.Data.Name) then
 				components[purchaseButtonKey].IsPinned = true
-				SetAnimation({ Name = "StoreItemPin", DestinationId = components[purchaseButtonKey].PinButtonId })
-				-- Silent toolip
-				game.CreateTextBox({ Id = button.Id, TextSymbolScale = 0, Text = "StoreItemPinTooltip", Color = game.Color
-				.Transparent, })
+				SetAnimation({
+					Name = "ModsNikkelMMusicMakerRandomizerFavourite",
+					DestinationId = components[purchaseButtonKey].PinButtonId
+				})
 			end
 		end
+
 		::continue::
 	end
 end)

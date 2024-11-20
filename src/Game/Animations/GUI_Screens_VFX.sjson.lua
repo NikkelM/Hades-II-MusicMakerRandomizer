@@ -8,7 +8,10 @@ local newData = {
   {
     Name = "ModsNikkelMMusicMakerRandomizerFavourite",
     InheritFrom = "FilledHeartIcon",
-    Scale = 0.8
+    -- Scaling and offset is influenced by the default pin icon's values
+    Scale = 0.7,
+		OffsetX = -5,
+		OffsetY = 15
   }
 }
 
