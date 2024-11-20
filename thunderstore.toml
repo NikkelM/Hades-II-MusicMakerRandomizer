@@ -1,0 +1,44 @@
+[config]
+schemaVersion = "0.0.1"
+
+
+[package]
+namespace = "NikkelM"
+name = "Randomize_Music_Maker_Song_Choice"
+versionNumber = "1.0.3"
+description = "Allow the Music Maker to choose a new, random song for you each time you return to the crossroads."
+websiteUrl = "https://github.com/NikkelM/Hades-II-MusicMakerRandomizer"
+containsNsfwContent = false
+
+[package.dependencies]
+Hell2Modding-Hell2Modding = "1.0.49"
+SGG_Modding-ENVY = "1.1.0"
+SGG_Modding-Chalk = "2.1.1"
+SGG_Modding-ReLoad = "1.0.2"
+SGG_Modding-SJSON = "1.0.0"
+SGG_Modding-ModUtil = "4.0.0"
+
+
+[build]
+icon = "./icon.png"
+readme = "./README.md"
+outdir = "./build"
+
+[[build.copy]]
+source = "./CHANGELOG.md"
+target = "./CHANGELOG.md"
+
+[[build.copy]]
+source = "./LICENSE"
+target = "./LICENSE"
+
+[[build.copy]]
+source = "./src"
+target = "./plugins"
+
+[publish]
+repository = "https://thunderstore.io"
+communities = [ "hades-ii", ]
+
+[publish.categories]
+hades-ii = [ "mods", "misc", "audio" ]
