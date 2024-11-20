@@ -5,11 +5,11 @@ local order = {
 
 local newData = {
   {
-    Id = "ModsNikkelMMusicMakerRandomizerFavouriteButton",
+    Id = "ModsNikkelMMusicMakerRandomizerFavoriteButton",
     DisplayName = "{IP} SET AS FAVOURITE"
   },
   {
-    Id = "ModsNikkelMMusicMakerRandomizerRemoveFavouriteButton",
+    Id = "ModsNikkelMMusicMakerRandomizerRemoveFavoriteButton",
     DisplayName = "{IP} REMOVE FAVOURITE"
   }
 }

@@ -1,5 +1,5 @@
 table.insert(game.ScreenData.MusicPlayer.Songs, 1, "Song_RandomSong")
-table.insert(game.ScreenData.MusicPlayer.Songs, 2, "Song_RandomSongFavourites")
+table.insert(game.ScreenData.MusicPlayer.Songs, 2, "Song_RandomSongFavorites")
 
 local randomizerSong =
 {
@@ -26,10 +26,10 @@ local randomizerSong =
 			},
 		},
 	},
-	Song_RandomSongFavourites = {
-		Name = "Song_RandomSongFavourites",
+	Song_RandomSongFavorites = {
+		Name = "Song_RandomSongFavorites",
 		InheritFrom = { "DefaultSongItem" },
-		TrackName = "Song_RandomSongFavouritesTrack",
+		TrackName = "Song_RandomSongFavoritesTrack",
 
 		Cost =
 		{

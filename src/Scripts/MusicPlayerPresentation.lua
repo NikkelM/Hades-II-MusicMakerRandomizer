@@ -13,12 +13,12 @@ modutil.mod.Path.Wrap("MouseOverMusicPlayerItem", function(base, button)
 				LuaValue = { PlayingSongFriendlyName = game.GameState.MusicMakerRandomizerFriendlyPlayingSong }
 			}
 		)
-		-- Similarly for the Song_RandomSongFavourites
-	elseif game.GameState.WorldUpgrades["Song_RandomSongFavourites"] and game.GameState.MusicPlayerSongName == "Song_RandomSongFavourites" and button.Data.Name == "Song_RandomSongFavourites" then
+		-- Similarly for the Song_RandomSongFavorites
+	elseif game.GameState.WorldUpgrades["Song_RandomSongFavorites"] and game.GameState.MusicPlayerSongName == "Song_RandomSongFavorites" and button.Data.Name == "Song_RandomSongFavorites" then
 		game.ModifyTextBox(
 			{
 				Id = components.InfoBoxDescription.Id,
-				Text = "Song_RandomSongFavourites_PlayingInfo",
+				Text = "Song_RandomSongFavorites_PlayingInfo",
 				UseDescription = true,
 				LuaKey = "TempTextData",
 				LuaValue = { PlayingSongFriendlyName = game.GameState.MusicMakerRandomizerFriendlyPlayingSong }
@@ -42,12 +42,12 @@ modutil.mod.Path.Wrap("UpdateMusicPlayerInteractionText", function(base, screen,
 	local components = screen.Components
 
 	if button ~= nil and button.Data ~= nil then
-		if button.Purchased and not (button.Data.Name == "Song_RandomSong" or button.Data.Name == "Song_RandomSongFavourites") then
+		if button.Purchased and not (button.Data.Name == "Song_RandomSong" or button.Data.Name == "Song_RandomSongFavorites") then
 			SetAlpha({ Id = components.PinButton.Id, Fraction = 1.0, Duration = 0.2 })
 			if game.HasStoreItemPin(button.Data.Name) then
-				ModifyTextBox({ Id = components.PinButton.Id, Text = "ModsNikkelMMusicMakerRandomizerRemoveFavouriteButton" })
+				ModifyTextBox({ Id = components.PinButton.Id, Text = "ModsNikkelMMusicMakerRandomizerRemoveFavoriteButton" })
 			else
-				ModifyTextBox({ Id = components.PinButton.Id, Text = "ModsNikkelMMusicMakerRandomizerFavouriteButton" })
+				ModifyTextBox({ Id = components.PinButton.Id, Text = "ModsNikkelMMusicMakerRandomizerFavoriteButton" })
 			end
 		else
 			-- We need to reset the button's text in case the player is hovering over an unbought song

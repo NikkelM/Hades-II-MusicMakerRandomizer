@@ -17,16 +17,16 @@ local newData = {
     Description = "Allow the Music Maker to choose a new song for you each time you return to the crossroads."
   },
   {
-    Id = "Song_RandomSongFavourites_PlayingInfo",
+    Id = "Song_RandomSongFavorites_PlayingInfo",
     DisplayName = "Music Maker's Choice",
     Description =
-    "Allow the Music Maker to choose a new, favourited song for you each time you return to the crossroads.\n Now playing {#ItalicFormat}{$TempTextData.PlayingSongFriendlyName}{#prev}."
+    "Allow the Music Maker to choose a new, favorited song for you each time you return to the crossroads.\n Now playing {#ItalicFormat}{$TempTextData.PlayingSongFriendlyName}{#prev}."
   },
   {
-    Id = "Song_RandomSongFavourites",
-    DisplayName = "Music Maker's Choice (Favourites)",
+    Id = "Song_RandomSongFavorites",
+    DisplayName = "Music Maker's Choice (Favorites)",
     Description =
-    "Allow the Music Maker to choose a new, favourited song for you each time you return to the crossroads."
+    "Allow the Music Maker to choose a new, favorited song for you each time you return to the crossroads."
   }
 }
 

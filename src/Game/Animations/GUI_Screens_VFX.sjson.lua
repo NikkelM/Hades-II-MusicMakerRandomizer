@@ -1,17 +1,17 @@
 local order = {
   "Name",
   "InheritFrom",
-	"Scale"
+  "Scale"
 }
 
 local newData = {
   {
-    Name = "ModsNikkelMMusicMakerRandomizerFavourite",
+    Name = "ModsNikkelMMusicMakerRandomizerFavorite",
     InheritFrom = "FilledHeartIcon",
     -- Scaling and offset is influenced by the default pin icon's values
     Scale = 0.7,
-		OffsetX = -5,
-		OffsetY = 15
+    OffsetX = -5,
+    OffsetY = 15
   }
 }
 
