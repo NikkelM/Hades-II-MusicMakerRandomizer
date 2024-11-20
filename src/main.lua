@@ -67,6 +67,7 @@ local function on_ready()
   import "Scripts/MusicPlayerPresentation.lua"
 
   import "Game/Text/HelpText.en.sjson.lua"
+  import "Game/Animations/GUI_Screens_VFX.sjson.lua"
 end
 
 local function on_reload()
