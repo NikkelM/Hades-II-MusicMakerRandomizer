@@ -58,21 +58,21 @@ public.config = config -- so other mods can access our config
 -- end
 
 local function on_ready()
-	-- what to do when we are ready, but not re-do on reload.
-	if config.enabled == false then return end
+  -- what to do when we are ready, but not re-do on reload.
+  if config.enabled == false then return end
 
-	import "Scripts/AudioLogic.lua"
-	import "Scripts/MusicPlayerData.lua"
-	import "Scripts/MusicPlayerLogic.lua"
-	import "Scripts/MusicPlayerPresentation.lua"
+  import "Scripts/AudioLogic.lua"
+  import "Scripts/MusicPlayerData.lua"
+  import "Scripts/MusicPlayerLogic.lua"
+  import "Scripts/MusicPlayerPresentation.lua"
 
-	import "Game/Text/HelpText.en.sjson.lua"
+  import "Game/Text/HelpText.en.sjson.lua"
 end
 
 local function on_reload()
-	-- what to do when we are ready, but also again on every reload.
-	-- only do things that are safe to run over and over.
-	if config.enabled == false then return end
+  -- what to do when we are ready, but also again on every reload.
+  -- only do things that are safe to run over and over.
+  if config.enabled == false then return end
 end
 
 -- this allows us to limit certain functions to not be reloaded.
@@ -80,5 +80,5 @@ local loader = reload.auto_single()
 
 -- this runs only when modutil and the game's lua is ready
 modutil.once_loaded.game(function()
-	loader.load(on_ready, on_reload)
+  loader.load(on_ready, on_reload)
 end)
