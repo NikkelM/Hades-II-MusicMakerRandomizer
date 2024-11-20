@@ -23,3 +23,19 @@ modutil.mod.Path.Wrap("MouseOverMusicPlayerItem", function(base, button)
 		)
 	end
 end)
+
+modutil.mod.Path.Wrap("UpdateMusicPlayerInteractionText", function(base, screen, button)
+	base(screen, button)
+
+	local components = screen.Components
+
+	if button ~= nil and button.Data ~= nil then
+		if button.Purchased then
+			SetAlpha({ Id = components.PinButton.Id, Fraction = 1.0, Duration = 0.2 })
+			ModifyTextBox({ Id = components.PinButton.Id, Text = "ModsNikkelMMusicMakerRandomizerFavouriteButton"})
+		else
+			-- We need to reset the button's text in case the player is hovering over an unbought song
+			ModifyTextBox({ Id = components.PinButton.Id, Text = "Menu_Pin"})
+		end
+	end
+end)

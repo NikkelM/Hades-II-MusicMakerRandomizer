@@ -27,9 +27,9 @@ SetAlpha({ Id = button.NewButtonId, Fraction = 0, Duration = 0.2 })
 -- TODO: How to make sure it can be toggled multiple times in the same menu open event?
 ]]
 
-local helpTextFile = rom.path.combine(rom.paths.Content, 'Game/Animations/GUI_Screens_VFX.sjson')
+local GuiScreensVFXFile = rom.path.combine(rom.paths.Content, 'Game/Animations/GUI_Screens_VFX.sjson')
 
-sjson.hook(helpTextFile, function(data)
+sjson.hook(GuiScreensVFXFile, function(data)
   for _, newIcon in ipairs(newData) do
     table.insert(data.Animations, sjson.to_object(newIcon, order))
   end
