@@ -11,9 +11,12 @@ modutil.mod.Path.Wrap("GhostAdminPinItem", function(base, screen, button)
 			game.AddStoreItemPinPresentation(screen.SelectedItem,
 				{ AnimationName = "ModsNikkelMMusicMakerRandomizerFavourite", SkipVoice = true })
 			DestroyTextBox({ Id = screen.SelectedItem.Id, AffectText = "StoreItemPinTooltip", RemoveTooltips = true })
+			-- Update the pin button text to reflect the change
+			ModifyTextBox({ Id = button.Id, Text = "ModsNikkelMMusicMakerRandomizerRemoveFavouriteButton" })
 		else
 			game.RemoveStoreItemPin(itemName)
 			game.RemoveStoreItemPinPresentation(screen.SelectedItem)
+			ModifyTextBox({ Id = button.Id, Text = "ModsNikkelMMusicMakerRandomizerFavouriteButton" })
 		end
 		return
 	end

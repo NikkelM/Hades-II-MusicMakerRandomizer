@@ -13,6 +13,17 @@ modutil.mod.Path.Wrap("MouseOverMusicPlayerItem", function(base, button)
 				LuaValue = { PlayingSongFriendlyName = game.GameState.MusicMakerRandomizerFriendlyPlayingSong }
 			}
 		)
+		-- Similarly for the Song_RandomSongFavourites
+	elseif game.GameState.WorldUpgrades["Song_RandomSongFavourites"] and game.GameState.MusicPlayerSongName == "Song_RandomSongFavourites" and button.Data.Name == "Song_RandomSongFavourites" then
+		game.ModifyTextBox(
+			{
+				Id = components.InfoBoxDescription.Id,
+				Text = "Song_RandomSongFavourites_PlayingInfo",
+				UseDescription = true,
+				LuaKey = "TempTextData",
+				LuaValue = { PlayingSongFriendlyName = game.GameState.MusicMakerRandomizerFriendlyPlayingSong }
+			}
+		)
 	else
 		game.ModifyTextBox(
 			{
@@ -32,10 +43,14 @@ modutil.mod.Path.Wrap("UpdateMusicPlayerInteractionText", function(base, screen,
 	if button ~= nil and button.Data ~= nil then
 		if button.Purchased then
 			SetAlpha({ Id = components.PinButton.Id, Fraction = 1.0, Duration = 0.2 })
-			ModifyTextBox({ Id = components.PinButton.Id, Text = "ModsNikkelMMusicMakerRandomizerFavouriteButton"})
+			if game.HasStoreItemPin(button.Data.Name) then
+				ModifyTextBox({ Id = components.PinButton.Id, Text = "ModsNikkelMMusicMakerRandomizerRemoveFavouriteButton" })
+			else
+				ModifyTextBox({ Id = components.PinButton.Id, Text = "ModsNikkelMMusicMakerRandomizerFavouriteButton" })
+			end
 		else
 			-- We need to reset the button's text in case the player is hovering over an unbought song
-			ModifyTextBox({ Id = components.PinButton.Id, Text = "Menu_Pin"})
+			ModifyTextBox({ Id = components.PinButton.Id, Text = "Menu_Pin" })
 		end
 	end
 end)

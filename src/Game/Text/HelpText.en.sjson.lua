@@ -7,14 +7,26 @@ local order = {
 local newData = {
   {
     Id = "Song_RandomSong_PlayingInfo",
-    DisplayName = "Music Maker's choice",
+    DisplayName = "Music Maker's Choice",
     Description =
     "Allow the Music Maker to choose a new song for you each time you return to the crossroads.\n Now playing {#ItalicFormat}{$TempTextData.PlayingSongFriendlyName}{#prev}."
   },
   {
     Id = "Song_RandomSong",
-    DisplayName = "Music Maker's choice",
+    DisplayName = "Music Maker's Choice",
     Description = "Allow the Music Maker to choose a new song for you each time you return to the crossroads."
+  },
+  {
+    Id = "Song_RandomSongFavourites_PlayingInfo",
+    DisplayName = "Music Maker's Choice",
+    Description =
+    "Allow the Music Maker to choose a new, favourited song for you each time you return to the crossroads.\n Now playing {#ItalicFormat}{$TempTextData.PlayingSongFriendlyName}{#prev}."
+  },
+  {
+    Id = "Song_RandomSongFavourites",
+    DisplayName = "Music Maker's Choice (Favourites)",
+    Description =
+    "Allow the Music Maker to choose a new, favourited song for you each time you return to the crossroads."
   }
 }
 

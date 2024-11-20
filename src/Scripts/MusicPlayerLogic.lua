@@ -1,30 +1,38 @@
 modutil.mod.Path.Wrap("SelectMusicPlayerItem", function(base, screen, button)
 	-- When the player pauses the random song, reset the chosen track so a new one can be chosen
-	game.CurrentRun.MusicMakerRandomizerTrackName = nil
 	game.GameState.MusicMakerRandomizerFriendlyPlayingSong = "Nothing.."
 
 	base(screen, button)
 
-	if (game.GameState.MusicPlayerSongName == "Song_RandomSong" or game.GameState.MusicPlayerSongName == nil) and button.Data.Name == "Song_RandomSong" then
+	if (game.GameState.MusicPlayerSongName == "Song_RandomSong" or game.GameState.MusicPlayerSongName == "Song_RandomSongFavourites" or game.GameState.MusicPlayerSongName == nil)
+			and (button.Data.Name == "Song_RandomSong" or button.Data.Name == "Song_RandomSongFavourites") then
 		-- Update the description with the new currently playing song, or "Nothing..." if the player paused the random song
 		local components = button.Screen.Components
+
+		local text = ""
+		if button.Data.Name == "Song_RandomSong" then
+			text = "Song_RandomSong_PlayingInfo"
+		else
+			text = "Song_RandomSongFavourites_PlayingInfo"
+		end
+
 		game.ModifyTextBox(
 			{
 				Id = components.InfoBoxDescription.Id,
-				Text = "Song_RandomSong_PlayingInfo",
+				Text = text,
 				UseDescription = true,
 				LuaKey = "TempTextData",
 				LuaValue = { PlayingSongFriendlyName = game.GameState.MusicMakerRandomizerFriendlyPlayingSong }
 			}
 		)
 
-		if game.GameState.MusicPlayerSongName == "Song_RandomSong" and game.RandomInt(1, 7) > 5 then
+		if (game.GameState.MusicPlayerSongName == "Song_RandomSong" or game.GameState.MusicPlayerSongName == "Song_RandomSongFavourites") and game.RandomInt(1, 7) > 5 then
 			game.PlaySpeechCue("/VO/Melinoe_2356", nil, nil, "Interrupt", false)
 		end
 	end
 end)
 
--- Add the pin component to all buttons (except the random song, it cannot be favourited), regardless if purchased or not
+-- Add the pin component to all buttons (except the random songs, they cannot be favourited), regardless if purchased or not
 modutil.mod.Path.Wrap("MusicPlayerDisplayItems", function(base, screen)
 	base(screen)
 
@@ -41,7 +49,7 @@ modutil.mod.Path.Wrap("MusicPlayerDisplayItems", function(base, screen)
 			local pinButtonKey = "PinIcon" .. screen.NumItems
 
 			-- If the song already has a pin icon, skip it
-			if components[pinButtonKey] ~= nil or songName == "Song_RandomSong" then
+			if components[pinButtonKey] ~= nil or songName == "Song_RandomSong" or songName == "Song_RandomSongFavourites" then
 				goto continue
 			end
 
