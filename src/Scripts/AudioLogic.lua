@@ -4,7 +4,7 @@ modutil.mod.Path.Wrap("MusicianMusic", function(base, args)
 		local availableTracks = {}
 		if game.GameState and game.GameState.WorldUpgrades then
 			for _, songName in ipairs(game.ScreenData.MusicPlayer.Songs) do
-				if songName ~= "Song_RandomSong" and (game.GameState.WorldUpgrades[songName] or config.AllSongs) then
+				if songName ~= "Song_RandomSong" and (game.GameState.WorldUpgrades[songName] or config.allSongs) then
 					table.insert(availableTracks, game.WorldUpgradeData[songName])
 				end
 			end
