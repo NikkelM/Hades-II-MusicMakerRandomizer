@@ -35,13 +35,14 @@ modutil.mod.Path.Wrap("MouseOverMusicPlayerItem", function(base, button)
 	end
 end)
 
+-- Makes sure the pin button prompt text is shown for purchased songs
 modutil.mod.Path.Wrap("UpdateMusicPlayerInteractionText", function(base, screen, button)
 	base(screen, button)
 
 	local components = screen.Components
 
 	if button ~= nil and button.Data ~= nil then
-		if button.Purchased then
+		if button.Purchased and not (button.Data.Name == "Song_RandomSong" or button.Data.Name == "Song_RandomSongFavourites") then
 			SetAlpha({ Id = components.PinButton.Id, Fraction = 1.0, Duration = 0.2 })
 			if game.HasStoreItemPin(button.Data.Name) then
 				ModifyTextBox({ Id = components.PinButton.Id, Text = "ModsNikkelMMusicMakerRandomizerRemoveFavouriteButton" })

@@ -33,6 +33,7 @@ modutil.mod.Path.Wrap("SelectMusicPlayerItem", function(base, screen, button)
 end)
 
 -- Add the pin component to all buttons (except the random songs, they cannot be favourited), regardless if purchased or not
+-- This if for the icon that shows on the right, not the button prompt
 modutil.mod.Path.Wrap("MusicPlayerDisplayItems", function(base, screen)
 	base(screen)
 
