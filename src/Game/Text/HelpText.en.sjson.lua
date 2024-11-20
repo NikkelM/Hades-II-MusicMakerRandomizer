@@ -9,7 +9,7 @@ local newData = {
     Id = "Song_RandomSong_PlayingInfo",
     DisplayName = "Music Maker's Choice",
     Description =
-    "Allow the Music Maker to choose a new song for you each time you return to the crossroads.\n Now playing {#ItalicFormat}{$TempTextData.PlayingSongFriendlyName}{#prev}."
+    "Allow the Music Maker to choose a new song for you each time you return to the crossroads.\n Now playing {#ItalicFormat}{$TempTextData.PlayingSongFriendlyName}."
   },
   {
     Id = "Song_RandomSong",
@@ -20,13 +20,13 @@ local newData = {
     Id = "Song_RandomSongFavorites_PlayingInfo",
     DisplayName = "Music Maker's Choice",
     Description =
-    "Allow the Music Maker to choose a new, favorited song for you each time you return to the crossroads.\n Now playing {#ItalicFormat}{$TempTextData.PlayingSongFriendlyName}{#prev}."
+    "Allow the Music Maker to choose a new, favorited song for you each time you return to the crossroads.\n Now playing {#ItalicFormat}{$TempTextData.PlayingSongFriendlyName}."
   },
   {
     Id = "Song_RandomSongFavorites",
     DisplayName = "Music Maker's Choice (Favorites)",
     Description =
-    "Allow the Music Maker to choose a new, favorited song for you each time you return to the crossroads."
+    "Allow the Music Maker to choose a new, favorited song for you each time you return to the crossroads.\n {#ItalicFormat}Favorite songs using   {IP}."
   }
 }
 

@@ -7,11 +7,14 @@ modutil.mod.Path.Wrap("SelectMusicPlayerItem", function(base, screen, button)
 	if (game.GameState.MusicPlayerSongName == "Song_RandomSong" or game.GameState.MusicPlayerSongName == "Song_RandomSongFavorites" or game.GameState.MusicPlayerSongName == nil)
 			and (button.Data.Name == "Song_RandomSong" or button.Data.Name == "Song_RandomSongFavorites") then
 		-- Update the description with the new currently playing song, or "Nothing..." if the player paused the random song
+		-- Use the base text for the favorites song if there are no favorites
 		local components = button.Screen.Components
 
 		local text = ""
 		if button.Data.Name == "Song_RandomSong" then
 			text = "Song_RandomSong_PlayingInfo"
+		elseif game.GameState.MusicPlayerSongName == nil then
+			text = "Song_RandomSongFavorites"
 		else
 			text = "Song_RandomSongFavorites_PlayingInfo"
 		end
