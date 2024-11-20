@@ -17,5 +17,9 @@ modutil.mod.Path.Wrap("SelectMusicPlayerItem", function(base, screen, button)
 				LuaValue = { PlayingSongFriendlyName = game.GameState.MusicMakerRandomizerFriendlyPlayingSong }
 			}
 		)
+
+		if game.GameState.MusicPlayerSongName == "Song_RandomSong" and game.RandomInt(1, 7) > 5 then
+			game.PlaySpeechCue( "/VO/Melinoe_2356", nil, nil, "Interrupt", false )
+		end
 	end
 end)
