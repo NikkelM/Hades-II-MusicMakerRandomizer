@@ -59,7 +59,7 @@ public.config = config -- so other mods can access our config
 
 local function on_ready()
   -- what to do when we are ready, but not re-do on reload.
-  if config.enabled == false then return end
+  if config.Enabled == false then return end
 
   import "Scripts/AudioLogic.lua"
   import "Scripts/MusicPlayerData.lua"
@@ -72,7 +72,7 @@ end
 local function on_reload()
   -- what to do when we are ready, but also again on every reload.
   -- only do things that are safe to run over and over.
-  if config.enabled == false then return end
+  if config.Enabled == false then return end
 end
 
 -- this allows us to limit certain functions to not be reloaded.
