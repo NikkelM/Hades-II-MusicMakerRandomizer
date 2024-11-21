@@ -16,6 +16,7 @@ Will work with any songs added in the future, or through other mods.
 
 By default, the mod will only randomize from unlocked songs.
 You can change this behaviour by setting the `allSongs` option to `true`.
+<br>
 **Spoiler Warning**: Note that this will include songs that are not yet unlocked in the game, e.g. from future regions or bosses.
 
 To disable the mod through the config, simply set `enabled` to `false`.
