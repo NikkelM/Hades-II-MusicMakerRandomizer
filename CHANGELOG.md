@@ -1,10 +1,14 @@
 # Changelog
 
-## v1.0.4
+## v2.0.0
 
 <!--Releasenotes start-->
-- Migrated the mod to the modern Thunderstore framework (Nexus will no longer receive updates).
+- NEW: Mark songs as favorite and have the Music Maker randomize only from favorites through a new song choice.
 <!--Releasenotes end-->
+
+## v1.0.4
+
+- Migrated the mod to the modern Thunderstore framework (Nexus will no longer receive updates).
 
 ## v1.0.3
 
