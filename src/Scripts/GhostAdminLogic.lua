@@ -24,11 +24,23 @@ modutil.mod.Path.Wrap("GhostAdminPinItem", function(base, screen, button)
 			DestroyTextBox({ Id = screen.SelectedItem.Id, AffectText = "StoreItemPinTooltip", RemoveTooltips = true })
 			-- Update the pin button text to reflect the change
 			ModifyTextBox({ Id = button.Id, Text = "ModsNikkelMMusicMakerRandomizerRemoveFavoriteButton" })
-			-- Change the text color of the favorite song to be "affordable", if not yet purchased
+
+			-- Change the text color of the favorite song to be "affordable", if not yet purchased and all requirements are met
 			if not game.GameState.WorldUpgradesAdded["Song_RandomSongFavorites"] then
 				for _, screenButton in pairs(screen.Components) do
 					if screenButton.Data and screenButton.Data.Name == "Song_RandomSongFavorites" then
-						ModifyTextBox({ Id = screenButton.Id, Color = { 85, 202, 152, 255 } })
+						-- Check that all required resources are available, and if one isn't, skip the color change
+						local canAfford = true
+						for resourceName, resourceCost in pairs(screenButton.Data.Cost) do
+							if (game.GameState.Resources[resourceName] or 0) < resourceCost then
+								canAfford = false
+								break
+							end
+						end
+						-- Change the text color to mark the song as "affordable"
+						if canAfford then
+							ModifyTextBox({ Id = screenButton.Id, Color = { 85, 202, 152, 255 } })
+						end
 						break
 					end
 				end
@@ -41,6 +53,7 @@ modutil.mod.Path.Wrap("GhostAdminPinItem", function(base, screen, button)
 			ModifyTextBox({ Id = button.Id, Text = "ModsNikkelMMusicMakerRandomizerFavoriteButton" })
 
 			-- Change the text color of the favorite song to be "unaffordable", if not yet purchased and no favorites exist
+			-- Other resource costs can be disregarded here, as just this check is enough
 			if not game.GameState.WorldUpgradesAdded["Song_RandomSongFavorites"] and game.GameState.Resources["ModsNikkelMMusicMakerRandomizerMusicPlayerFavoritesCount"] < 1 then
 				for _, screenButton in pairs(screen.Components) do
 					if screenButton.Data and screenButton.Data.Name == "Song_RandomSongFavorites" then
