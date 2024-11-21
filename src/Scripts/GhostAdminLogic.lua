@@ -6,6 +6,7 @@ modutil.mod.Path.Wrap("GhostAdminPinItem", function(base, screen, button)
 
 	local itemName = screen.SelectedItem.Data.Name
 	if game.Contains(game.ScreenData.MusicPlayer.Songs, itemName) and game.GameState.WorldUpgradesAdded[itemName] then
+		-- These two songs cannot be favorited
 		if itemName == "Song_RandomSong" or itemName == "Song_RandomSongFavorites" then
 			return
 		end
@@ -13,7 +14,17 @@ modutil.mod.Path.Wrap("GhostAdminPinItem", function(base, screen, button)
 		if not game.HasStoreItemPin(itemName) then
 			-- Increase the favorite song resource count
 			game.GameState.Resources["ModsNikkelMMusicMakerRandomizerMusicPlayerFavoritesCount"] = (game.GameState.Resources["ModsNikkelMMusicMakerRandomizerMusicPlayerFavoritesCount"] or 0) + 1
-			-- Change the text format of the favorite song to be "affordable", if not yet purchased
+			-- Pin/Favorite the song
+			game.AddStoreItemPin(itemName, "ModsNikkelMMusicMakerRandomizerMusicPlayerFavorites")
+			-- The animation is the icon that shows, this is a modified heart icon
+			game.AddStoreItemPinPresentation(screen.SelectedItem,
+				{ AnimationName = "ModsNikkelMMusicMakerRandomizerFavorite", SkipVoice = true })
+
+			-- Remove the tooltip
+			DestroyTextBox({ Id = screen.SelectedItem.Id, AffectText = "StoreItemPinTooltip", RemoveTooltips = true })
+			-- Update the pin button text to reflect the change
+			ModifyTextBox({ Id = button.Id, Text = "ModsNikkelMMusicMakerRandomizerRemoveFavoriteButton" })
+			-- Change the text color of the favorite song to be "affordable", if not yet purchased
 			if not game.GameState.WorldUpgradesAdded["Song_RandomSongFavorites"] then
 				for _, screenButton in pairs(screen.Components) do
 					if screenButton.Data and screenButton.Data.Name == "Song_RandomSongFavorites" then
@@ -23,24 +34,13 @@ modutil.mod.Path.Wrap("GhostAdminPinItem", function(base, screen, button)
 				end
 			end
 
-			-- Pin/Favorite the song
-			game.AddStoreItemPin(itemName, "ModsNikkelMMusicMakerRandomizerMusicPlayerFavorites")
-			game.AddStoreItemPinPresentation(screen.SelectedItem,
-				{ AnimationName = "ModsNikkelMMusicMakerRandomizerFavorite", SkipVoice = true })
-
-			-- Remove the tooltip
-			DestroyTextBox({ Id = screen.SelectedItem.Id, AffectText = "StoreItemPinTooltip", RemoveTooltips = true })
-			-- Update the pin button text to reflect the change
-			ModifyTextBox({ Id = button.Id, Text = "ModsNikkelMMusicMakerRandomizerRemoveFavoriteButton" })
-
 		else
-			-- Remove one favorited song from the resource count
 			game.GameState.Resources["ModsNikkelMMusicMakerRandomizerMusicPlayerFavoritesCount"] = (game.GameState.Resources["ModsNikkelMMusicMakerRandomizerMusicPlayerFavoritesCount"] or 1) - 1
 			game.RemoveStoreItemPin(itemName)
 			game.RemoveStoreItemPinPresentation(screen.SelectedItem)
 			ModifyTextBox({ Id = button.Id, Text = "ModsNikkelMMusicMakerRandomizerFavoriteButton" })
 
-			-- Change the text format of the favorite song to be "unaffordable", if not yet purchased
+			-- Change the text color of the favorite song to be "unaffordable", if not yet purchased and no favorites exist
 			if not game.GameState.WorldUpgradesAdded["Song_RandomSongFavorites"] and game.GameState.Resources["ModsNikkelMMusicMakerRandomizerMusicPlayerFavoritesCount"] < 1 then
 				for _, screenButton in pairs(screen.Components) do
 					if screenButton.Data and screenButton.Data.Name == "Song_RandomSongFavorites" then
