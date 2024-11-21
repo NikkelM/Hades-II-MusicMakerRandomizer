@@ -1,3 +1,4 @@
+-- Adds a new icon based off of the heart used for gifting that will indicate if a song is favorited
 local order = {
   "Name",
   "InheritFrom",

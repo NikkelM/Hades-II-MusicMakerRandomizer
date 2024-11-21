@@ -1,3 +1,4 @@
+-- Used as a replacement for the Forget-Me-Not pin button prompt
 local order = {
   "Id",
   "DisplayName"
