@@ -1,6 +1,32 @@
+local function IsAnySongFavorited()
+	local favoritedTracks = {}
+	for _, songName in ipairs(game.ScreenData.MusicPlayer.Songs) do
+		if (songName ~= "Song_RandomSong" and songName ~= "Song_RandomSongFavorites") and game.GameState.WorldUpgrades[songName] and game.HasStoreItemPin(songName) then
+			table.insert(favoritedTracks, game.WorldUpgradeData[songName])
+		end
+	end
+	return #favoritedTracks > 0
+end
+
 modutil.mod.Path.Wrap("SelectMusicPlayerItem", function(base, screen, button)
+	local components = button.Screen.Components
 	-- When the player pauses the random song, reset the chosen track so a new one can be chosen
 	game.GameState.MusicMakerRandomizerFriendlyPlayingSong = "Nothing.."
+
+	-- Do not allow playing the favorites song if there are no favorited songs (still allow pausing it)
+	if game.GameState.MusicPlayerSongName ~= "Song_RandomSongFavorites" and button.Data.Name == "Song_RandomSongFavorites" and not IsAnySongFavorited() then
+		-- TODO: Play an error sound/animation here
+		game.ModifyTextBox(
+			{
+				Id = components.InfoBoxDescription.Id,
+				Text = "Song_RandomSongFavorites",
+				UseDescription = true,
+				LuaKey = "TempTextData",
+				LuaValue = { PlayingSongFriendlyName = game.GameState.MusicMakerRandomizerFriendlyPlayingSong }
+			}
+		)
+		return
+	end
 
 	base(screen, button)
 
@@ -8,7 +34,6 @@ modutil.mod.Path.Wrap("SelectMusicPlayerItem", function(base, screen, button)
 			and (button.Data.Name == "Song_RandomSong" or button.Data.Name == "Song_RandomSongFavorites") then
 		-- Update the description with the new currently playing song, or "Nothing..." if the player paused the random song
 		-- Use the base text for the favorites song if there are no favorites
-		local components = button.Screen.Components
 
 		local text = ""
 		if button.Data.Name == "Song_RandomSong" then
