@@ -40,7 +40,10 @@ public.config = config -- so other mods can access our config
 
 -- For debugging
 -- function printTable(t, indent)
--- 	if type(t) ~= "table" then
+-- 	if type(t) == "string" then
+--     print(t)
+--     return
+--   elseif type(t) ~= "table" then
 -- 		print("Error: Expected a table, got " .. type(t))
 -- 		return
 -- 	end
@@ -62,11 +65,15 @@ local function on_ready()
   if config.Enabled == false then return end
 
   import "Scripts/AudioLogic.lua"
+  import "Scripts/GhostAdminLogic.lua"
+  import "Scripts/ResourceData.lua"
   import "Scripts/MusicPlayerData.lua"
   import "Scripts/MusicPlayerLogic.lua"
   import "Scripts/MusicPlayerPresentation.lua"
 
   import "Game/Text/HelpText.en.sjson.lua"
+  import "Game/Text/ScreenText.en.sjson.lua"
+  import "Game/Animations/GUI_Screens_VFX.sjson.lua"
 end
 
 local function on_reload()
