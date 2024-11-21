@@ -15,7 +15,6 @@ modutil.mod.Path.Wrap("SelectMusicPlayerItem", function(base, screen, button)
 
 	-- Do not allow playing the favorites song if there are no favorited songs (still allow pausing it)
 	if game.GameState.MusicPlayerSongName ~= "Song_RandomSongFavorites" and button.Data.Name == "Song_RandomSongFavorites" and not IsAnySongFavorited() then
-		-- TODO: Play an error sound/animation here
 		game.ModifyTextBox(
 			{
 				Id = components.InfoBoxDescription.Id,
@@ -25,6 +24,26 @@ modutil.mod.Path.Wrap("SelectMusicPlayerItem", function(base, screen, button)
 				LuaValue = { PlayingSongFriendlyName = game.GameState.MusicMakerRandomizerFriendlyPlayingSong }
 			}
 		)
+
+		button.Data.CannotAffordVoiceLines =
+		{
+			BreakIfPlayed = true,
+			RandomRemaining = true,
+			PreLineWait = 0.15,
+			Cooldowns =
+			{
+				{ Name = "MelinoeAnyQuipSpeech" },
+				{ Name = "MelinoeResourceInteractionSpeech", Time = 6 },
+			},
+			{ Cue = "/VO/Melinoe_0386", Text = "I can't." },
+			{ Cue = "/VO/Melinoe_0390", Text = "No use." },
+			{ Cue = "/VO/Melinoe_0222", Text = "Can't." },
+			{ Cue = "/VO/Melinoe_1854", Text = "Afraid not..." },
+			{ Cue = "/VO/Melinoe_1855", Text = "Denied." },
+			{ Cue = "/VO/Melinoe_1856", Text = "Denied..." },
+		}
+		game.ScreenCantAffordPresentation(screen, button)
+
 		return
 	end
 
