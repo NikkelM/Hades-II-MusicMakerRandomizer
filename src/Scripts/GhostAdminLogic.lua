@@ -6,10 +6,15 @@ modutil.mod.Path.Wrap("GhostAdminPinItem", function(base, screen, button)
 
 	local itemName = screen.SelectedItem.Data.Name
 	if game.Contains(game.ScreenData.MusicPlayer.Songs, itemName) and game.GameState.WorldUpgradesAdded[itemName] then
+		if itemName == "Song_RandomSong" or itemName == "Song_RandomSongFavorites" then
+			return
+		end
+
 		if not game.HasStoreItemPin(itemName) then
 			game.AddStoreItemPin(itemName, "ModsNikkelMMusicMakerRandomizerMusicPlayerFavorites")
 			game.AddStoreItemPinPresentation(screen.SelectedItem,
 				{ AnimationName = "ModsNikkelMMusicMakerRandomizerFavorite", SkipVoice = true })
+				-- Remove the tooltip
 			DestroyTextBox({ Id = screen.SelectedItem.Id, AffectText = "StoreItemPinTooltip", RemoveTooltips = true })
 			-- Update the pin button text to reflect the change
 			ModifyTextBox({ Id = button.Id, Text = "ModsNikkelMMusicMakerRandomizerRemoveFavoriteButton" })
