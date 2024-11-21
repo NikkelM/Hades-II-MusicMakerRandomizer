@@ -82,13 +82,6 @@ end)
 -- Do not play the song if the player buys the favorites song and there are no favorited songs
 modutil.mod.Path.Wrap("DoMusicPlayerPurchase", function(base, screen, button)
 	if button.Data.Name == "Song_RandomSongFavorites" then
-		-- Always favorite the song itself
-		game.AddStoreItemPin("Song_RandomSongFavorites", "ModsNikkelMMusicMakerRandomizerMusicPlayerFavorites")
-		game.AddStoreItemPinPresentation(screen.SelectedItem,
-			{ AnimationName = "ModsNikkelMMusicMakerRandomizerFavorite", SkipVoice = true })
-		-- Remove the tooltip
-		DestroyTextBox({ Id = screen.SelectedItem.Id, AffectText = "StoreItemPinTooltip", RemoveTooltips = true })
-
 		-- If no other songs are favorited, don't play anything
 		if not IsAnySongFavorited() then
 			local itemData = button.Data

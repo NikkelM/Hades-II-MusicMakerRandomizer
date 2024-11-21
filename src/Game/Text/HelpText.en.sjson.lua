@@ -27,6 +27,11 @@ local newData = {
     DisplayName = "Music Maker's Choice (Favorites)",
     Description =
     "Allow the Music Maker to choose a new, favorited song for you each time you return to the crossroads.\n {#ItalicFormat}Favorite songs using   {IP}."
+  },
+  -- Shows up as the resource cost when trying to buy the random favorite song
+  {
+    Id = "ModsNikkelMMusicMakerRandomizerMusicPlayerFavoritesCount_Short",
+    DisplayName = "At least {#ItalicFormat}one{#prev}\nfavorited song"
   }
 }
 

@@ -34,7 +34,9 @@ local randomizerSong =
 		Cost =
 		{
 			CosmeticsPoints = 100,
-			GiftPoints = 1
+			GiftPoints = 1,
+			-- Custom resource that counts how many songs are currently favorited
+			ModsNikkelMMusicMakerRandomizerMusicPlayerFavoritesCount = 1,
 		},
 	},
 }

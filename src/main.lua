@@ -66,6 +66,7 @@ local function on_ready()
 
   import "Scripts/AudioLogic.lua"
   import "Scripts/GhostAdminLogic.lua"
+  import "Scripts/ResourceData.lua"
   import "Scripts/MusicPlayerData.lua"
   import "Scripts/MusicPlayerLogic.lua"
   import "Scripts/MusicPlayerPresentation.lua"
