@@ -2,9 +2,9 @@ local function IsSongEligibleForRandomizer(songName, randomizerType)
 	if songName == "Song_RandomSong" or songName == "Song_RandomSongFavorites" then
 		return false
 	end
-	if randomizerType == "Song_RandomSong" then
+	if randomizerType == "Song_RandomSongTrack" then
 		return game.GameState.WorldUpgrades[songName] or config.AllSongs
-	elseif randomizerType == "Song_RandomSongFavorites" then
+	elseif randomizerType == "Song_RandomSongFavoritesTrack" then
 		return game.GameState.WorldUpgrades[songName] and game.HasStoreItemPin(songName)
 	end
 	return false
