@@ -97,8 +97,8 @@ modutil.mod.Path.Wrap("DoMusicPlayerPurchase", function(base, screen, button)
 			game.MusicPlayerPurchasePostActivatePresentation(screen, button, itemData)
 			game.OpenMusicPlayerScreen(screen.OpenedFrom,
 				{ InitialScrollOffset = screen.ScrollOffset, SkipInitialDelay = true })
+			return
 		end
-		return
 	end
 
 	base(screen, button)
