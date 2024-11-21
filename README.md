@@ -7,7 +7,10 @@ The mod can also be configured to choose from all songs in the game, even those 
 
 Will work with any songs added in the future, or through other mods.
 
-![Randomize Music Maker Song Choice](https://github.com/user-attachments/assets/0a656e46-7358-4471-a552-b9c0d7d93569)
+![Randomize Music Maker Song Choice - Unlock favorites](https://github.com/user-attachments/assets/09733994-5346-44eb-988e-af1f039a8faa)
+
+![Randomize Music Maker Song Choice - Random Song is playing](https://github.com/user-attachments/assets/7b5a8f04-c5fa-4afa-9015-6ccf859678c1)
+
 
 ## Configuration
 
