@@ -1,7 +1,7 @@
 # Randomize Music Maker Song Choice
 
 This mod adds a new song to the Music Maker, which will play a random unlocked song each time you return to the crossroads.
-Songs can be marked as favorites, and the Music Maker instructed to only randomize from those.
+Songs can also be marked as favorites, and the Music Maker instructed to only randomize from those.
 
 The mod can also be configured to choose from all songs in the game, even those not yet unlocked/bought or discovered.
 
