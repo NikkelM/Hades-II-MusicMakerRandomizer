@@ -10,7 +10,7 @@ local randomizerSong =
 
 		Cost =
 		{
-			CosmeticsPoints = 10,
+			CosmeticsPoints = 100,
 		},
 
 		PreRevealVoiceLines =
@@ -33,7 +33,8 @@ local randomizerSong =
 
 		Cost =
 		{
-			CosmeticsPoints = 10,
+			CosmeticsPoints = 100,
+			GiftPoints = 1
 		},
 	},
 }
