@@ -81,15 +81,23 @@ end)
 
 -- Do not play the song if the player buys the favorites song and there are no favorited songs
 modutil.mod.Path.Wrap("DoMusicPlayerPurchase", function(base, screen, button)
-	if button.Data.Name == "Song_RandomSongFavorites" and not IsAnySongFavorited() then
-		local itemData = button.Data
-		game.SpendResources(itemData.Cost, itemData.Name, { Silent = true })
-		game.MusicPlayerPurchasePreActivatePresentation(screen, button, itemData)
-		-- Do not play the song, there are no eligible songs
-		-- game.GameState.MusicPlayerSongName = itemData.Name
-		-- game.MusicianMusic({ SourceId = screen.OpenedFrom.ObjectId, TrackName = game.WorldUpgradeData[itemData.Name].TrackName })
-		game.MusicPlayerPurchasePostActivatePresentation(screen, button, itemData)
-		game.OpenMusicPlayerScreen(screen.OpenedFrom, { InitialScrollOffset = screen.ScrollOffset, SkipInitialDelay = true })
+	if button.Data.Name == "Song_RandomSongFavorites" then
+		-- Always favorite the song itself
+		game.AddStoreItemPin("Song_RandomSongFavorites", "ModsNikkelMMusicMakerRandomizerMusicPlayerFavorites")
+		game.AddStoreItemPinPresentation(screen.SelectedItem,
+			{ AnimationName = "ModsNikkelMMusicMakerRandomizerFavorite", SkipVoice = true })
+		-- Remove the tooltip
+		DestroyTextBox({ Id = screen.SelectedItem.Id, AffectText = "StoreItemPinTooltip", RemoveTooltips = true })
+
+		-- If no other songs are favorited, don't play anything
+		if not IsAnySongFavorited() then
+			local itemData = button.Data
+			game.SpendResources(itemData.Cost, itemData.Name, { Silent = true })
+			game.MusicPlayerPurchasePreActivatePresentation(screen, button, itemData)
+			game.MusicPlayerPurchasePostActivatePresentation(screen, button, itemData)
+			game.OpenMusicPlayerScreen(screen.OpenedFrom,
+				{ InitialScrollOffset = screen.ScrollOffset, SkipInitialDelay = true })
+		end
 		return
 	end
 
@@ -114,7 +122,7 @@ modutil.mod.Path.Wrap("MusicPlayerDisplayItems", function(base, screen)
 			local pinButtonKey = "PinIcon" .. screen.NumItems
 
 			-- If the song already has a pin icon, skip it
-			if components[pinButtonKey] ~= nil or songName == "Song_RandomSong" or songName == "Song_RandomSongFavorites" then
+			if components[pinButtonKey] ~= nil or songName == "Song_RandomSong" then
 				goto continue
 			end
 
