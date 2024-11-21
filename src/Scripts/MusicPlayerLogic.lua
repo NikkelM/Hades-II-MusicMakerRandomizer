@@ -79,24 +79,6 @@ modutil.mod.Path.Wrap("SelectMusicPlayerItem", function(base, screen, button)
 	end
 end)
 
--- Do not play the song if the player buys the favorites song and there are no favorited songs
-modutil.mod.Path.Wrap("DoMusicPlayerPurchase", function(base, screen, button)
-	if button.Data.Name == "Song_RandomSongFavorites" then
-		-- If no other songs are favorited, don't play anything
-		if not IsAnySongFavorited() then
-			local itemData = button.Data
-			game.SpendResources(itemData.Cost, itemData.Name, { Silent = true })
-			game.MusicPlayerPurchasePreActivatePresentation(screen, button, itemData)
-			game.MusicPlayerPurchasePostActivatePresentation(screen, button, itemData)
-			game.OpenMusicPlayerScreen(screen.OpenedFrom,
-				{ InitialScrollOffset = screen.ScrollOffset, SkipInitialDelay = true })
-			return
-		end
-	end
-
-	base(screen, button)
-end)
-
 -- Add the pin component to all buttons (except the random songs, they cannot be favorited), regardless if purchased or not
 -- This if for the icon that shows on the right, not the button prompt
 modutil.mod.Path.Wrap("MusicPlayerDisplayItems", function(base, screen)
