@@ -9,8 +9,6 @@ local newResourceData =
 		InheritFrom = { "BaseResource" },
 
 		IconPath = "GUI\\Screens\\Codex\\filled_heart_icon",
-		TextIconPath = "GUI\\Screens\\Codex\\filled_heart_icon",
-		TooltipId = "ModsNikkelMMusicMakerRandomizerMusicPlayerFavoritesCountIcon",
 		CostTextId = "ModsNikkelMMusicMakerRandomizerMusicPlayerFavoritesCount_Short",
 		IconScale = 0.45
 	},
