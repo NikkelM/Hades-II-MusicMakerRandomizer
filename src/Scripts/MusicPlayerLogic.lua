@@ -13,6 +13,8 @@ modutil.mod.Path.Wrap("SelectMusicPlayerItem", function(base, screen, button)
 	local components = button.Screen.Components
 	-- This will be set to the new playing song if the selection plays a random song
 	game.GameState.MusicMakerRandomizerFriendlyPlayingSong = "Nothing.."
+	game.CurrentRun.MusicMakerRandomizerTrackName = nil
+	game.CurrentRun.MusicMakerRandomizerTrackType = nil
 
 	-- Do not allow playing the favorites song if there are no favorited songs (still allow pausing it)
 	if game.GameState.MusicPlayerSongName ~= "Song_RandomSongFavorites" and button.Data.Name == "Song_RandomSongFavorites" and not IsAnySongFavorited() then
