@@ -4,15 +4,15 @@ schemaVersion = "0.0.1"
 
 [package]
 namespace = "NikkelM"
-name = "Randomize_Music_Maker_Song_Choice"
+name = "Randomize_Favorite_Songs"
 versionNumber = "2.0.1"
-description = "Adds a song that allows the Music Maker to choose a new, random song for you each time you return to the crossroads. Now allows favoriting songs!"
+description = "Set songs as favorites with the Music Maker and randomize only from them each time you return to the Crossroads!"
 websiteUrl = "https://github.com/NikkelM/Hades-II-MusicMakerRandomizer"
 containsNsfwContent = false
 
 [package.dependencies]
-Hell2Modding-Hell2Modding = "1.0.49"
-SGG_Modding-ENVY = "1.1.0"
+Hell2Modding-Hell2Modding = "1.0.55"
+LuaENVY-ENVY = "1.2.0"
 SGG_Modding-Chalk = "2.1.1"
 SGG_Modding-ReLoad = "1.0.2"
 SGG_Modding-SJSON = "1.0.0"

@@ -1,10 +1,16 @@
 # Changelog
 
-## v2.0.1
+## v3.0.0
 
 <!--Releasenotes start-->
-- Fixed: Music changes between rooms if a random track is playing.
+- Reworked the favorite system to better work with the updated game logic.
+- Removed base randomizer functionality as it has been added to the base game. Randomizing from favorites is still available.
+- Note: Your favorites may have been reset due to the rework. Sorry!
 <!--Releasenotes end-->
+
+## v2.0.1
+
+- Fixed: Music changes between rooms if a random track is playing.
 
 ## v2.0.0
 

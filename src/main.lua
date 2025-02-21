@@ -39,21 +39,48 @@ config = chalk.auto 'config.lua'
 public.config = config -- so other mods can access our config
 
 -- For debugging
--- function printTable(t, indent)
--- 	if type(t) == "string" then
---     print(t)
---     return
---   elseif type(t) ~= "table" then
--- 		print("Error: Expected a table, got " .. type(t))
+-- function printTable(t, maxDepth, indent)
+-- 	if type(t) ~= "table" then
+-- 		print(t)
 -- 		return
 -- 	end
 
 -- 	indent = indent or 0
+-- 	maxDepth = maxDepth or 20
+-- 	if indent > maxDepth then
+-- 		print(string.rep("  ", indent) .. "...")
+-- 		return
+-- 	end
+
 -- 	local formatting = string.rep("  ", indent)
 -- 	for k, v in pairs(t) do
 -- 		if type(v) == "table" then
 -- 			print(formatting .. k .. ":")
--- 			printTable(v, indent + 1)
+-- 			printTable(v, maxDepth, indent + 1)
+-- 		else
+-- 			print(formatting .. k .. ": " .. tostring(v))
+-- 		end
+-- 	end
+-- end
+
+-- function game.printTable(t, maxDepth, indent)
+-- 	if type(t) ~= "table" then
+-- 		print(t)
+-- 		return
+-- 	end
+
+-- 	indent = indent or 0
+-- 	maxDepth = maxDepth or 20
+-- 	if indent > maxDepth then
+-- 		print(string.rep("  ", indent) .. "...")
+-- 		return
+-- 	end
+
+-- 	local formatting = string.rep("  ", indent)
+-- 	for k, v in pairs(t) do
+-- 		if type(v) == "table" then
+-- 			print(formatting .. k .. ":")
+-- 			game.printTable(v, maxDepth, indent + 1)
 -- 		else
 -- 			print(formatting .. k .. ": " .. tostring(v))
 -- 		end
@@ -66,12 +93,11 @@ local function on_ready()
 
   import "Scripts/AudioLogic.lua"
   import "Scripts/GhostAdminLogic.lua"
-  import "Scripts/ResourceData.lua"
   import "Scripts/MusicPlayerData.lua"
   import "Scripts/MusicPlayerLogic.lua"
   import "Scripts/MusicPlayerPresentation.lua"
+	import "Scripts/PatchLogic.lua"
 
-  import "Game/Text/HelpText.en.sjson.lua"
   import "Game/Text/ScreenText.en.sjson.lua"
   import "Game/Animations/GUI_Screens_VFX.sjson.lua"
 end

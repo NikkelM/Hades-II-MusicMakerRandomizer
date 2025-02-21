@@ -1,47 +1,17 @@
-table.insert(game.ScreenData.MusicPlayer.Songs, 1, "Song_RandomSong")
-table.insert(game.ScreenData.MusicPlayer.Songs, 2, "Song_RandomSongFavorites")
-
-local randomizerSong =
-{
-	Song_RandomSong = {
-		Name = "Song_RandomSong",
-		InheritFrom = { "DefaultSongItem" },
-		TrackName = "Song_RandomSongTrack",
-
-		Cost =
-		{
-			CosmeticsPoints = 100,
-		},
-
-		PreRevealVoiceLines =
-		{
-			{
-				PreLineWait = 0.35,
-				UsePlayerSource = true,
-				Cooldowns =
-				{
-					{ Name = "MelMusicPlayerRequestSpeech", Time = 2 },
-				},
-				{ Cue = "/VO/Melinoe_2356", Text = "Surprise!" },
-			},
-		},
+local randomizerButton = {
+	Graphic = "ContextualActionButton",
+	GroupName = "Combat_Menu_Overlay",
+	Alpha = 0.0,
+	Data = {
+		OnMouseOverFunctionName = "MouseOverContextualAction",
+		OnMouseOffFunctionName = "MouseOffContextualAction",
+		OnPressedFunctionName = "ModsNikkelMMusicMakerRandomizerShuffleFavorites",
+		ControlHotkeys = { "Codex", },
 	},
-	Song_RandomSongFavorites = {
-		Name = "Song_RandomSongFavorites",
-		InheritFrom = { "DefaultSongItem" },
-		TrackName = "Song_RandomSongFavoritesTrack",
-
-		Cost =
-		{
-			CosmeticsPoints = 100,
-			GiftPoints = 1,
-			-- Custom resource that counts how many songs are currently favorited
-			ModsNikkelMMusicMakerRandomizerMusicPlayerFavoritesCount = 1,
-		},
-	},
+	Text = "ModsNikkelMMusicMakerRandomizerShuffleFavorites",
+	TextArgs = UIData.ContextualButtonFormatRight,
+	IsFavoriteShuffleButton = true,
 }
 
-for songName, songData in pairs(randomizerSong) do
-	game.ProcessDataInheritance(songData, game.WorldUpgradeData)
-	game.WorldUpgradeData[songName] = songData
-end
+table.insert(game.ScreenData.MusicPlayer.ComponentData.ActionBar.ChildrenOrder, 3, "ShuffleButtonFavorites")
+game.ScreenData.MusicPlayer.ComponentData.ActionBar.Children.ShuffleButtonFavorites = randomizerButton

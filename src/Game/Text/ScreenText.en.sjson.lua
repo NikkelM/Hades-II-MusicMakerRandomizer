@@ -12,6 +12,10 @@ local newData = {
   {
     Id = "ModsNikkelMMusicMakerRandomizerRemoveFavoriteButton",
     DisplayName = "{IP} REMOVE FAVORITE"
+  },
+  {
+    Id = "ModsNikkelMMusicMakerRandomizerShuffleFavorites",
+    DisplayName = "{CX} RANDOMIZE FAVORITES"
   }
 }
 
