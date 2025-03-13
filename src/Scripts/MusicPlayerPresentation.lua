@@ -10,7 +10,7 @@ modutil.mod.Path.Wrap("UpdateMusicPlayerInteractionText", function(base, screen,
 
 	if button ~= nil and button.Data ~= nil then
 		local buttonName = button.Data.Name
-		if button.Purchased and buttonName ~= "Song_RandomSongFavorites" then
+		if button.Purchased then
 			SetAlpha({ Id = components.PinButton.Id, Fraction = 1.0, Duration = 0.2 })
 			if game.Contains(game.GameState.ModsNikkelMMusicMakerRandomizerFavoritedTracks, buttonName) then
 				ModifyTextBox({ Id = components.PinButton.Id, Text = "ModsNikkelMMusicMakerRandomizerRemoveFavoriteButton" })

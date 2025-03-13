@@ -1,4 +1,4 @@
----@meta NikkelM-Randomize_Music_Maker_Song_Choice
+---@meta NikkelM-Favorite_Songs
 local public = {}
 
 -- document whatever you made publicly available to other plugins here

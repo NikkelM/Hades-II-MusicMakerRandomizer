@@ -16,7 +16,7 @@ modutil.mod.Path.Wrap("DoPatches", function(base)
 		GameState.StoreItemPins = CollapseTable(GameState.StoreItemPins)
 	end
 
-	-- If no songs are favorited, favorited the default song to have at least one
+	-- If no songs are favorited, favorite the default song to have at least one
 	if #game.GameState.ModsNikkelMMusicMakerRandomizerFavoritedTracks == 0 then
 		table.insert(game.GameState.ModsNikkelMMusicMakerRandomizerFavoritedTracks, "Song_MainTheme")
 	end
