@@ -1,10 +1,14 @@
 # Changelog
 
-## v3.0.1
+## v3.0.2
 
 <!--Releasenotes start-->
-- Removed some unused code.
+- Updated dependencies, confirmed compatibility with the 1.0 update of Hades II.
 <!--Releasenotes end-->
+
+## v3.0.1
+
+- Removed some unused code.
 
 ## v3.0.0
 
