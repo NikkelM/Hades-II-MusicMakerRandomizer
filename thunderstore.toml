@@ -5,7 +5,7 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "NikkelM"
 name = "Randomize_Favorite_Songs"
-versionNumber = "3.0.2"
+versionNumber = "3.0.3"
 description = "Set songs as favorites with the Music Maker and randomize only from them each time you return to the Crossroads!"
 websiteUrl = "https://github.com/NikkelM/Hades-II-MusicMakerRandomizer"
 containsNsfwContent = false
