@@ -6,4 +6,4 @@ Simply mark a song as favorite using the same button as for pinning incantations
 
 Will work with any songs added in the future, or through other mods.
 
-![Favorite Songs](https://github.com/user-attachments/assets/3ca091b1-88e5-4eda-a030-fbe5fdf1f513)
+![Favorite Songs](https://github.com/user-attachments/assets/acd43415-4e88-4435-b0d8-1daa3ce4b26e)
