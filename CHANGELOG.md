@@ -1,10 +1,14 @@
 # Changelog
 
-## v3.0.2
+## v3.0.3
 
 <!--Releasenotes start-->
-- Updated dependencies, confirmed compatibility with the 1.0 update of Hades II.
+- Fixed preview image in r2modman.
 <!--Releasenotes end-->
+
+## v3.0.2
+
+- Updated dependencies, confirmed compatibility with the 1.0 update of Hades II.
 
 ## v3.0.1
 
