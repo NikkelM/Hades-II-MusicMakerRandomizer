@@ -15,9 +15,11 @@ local newData = {
   },
   {
     Id = "ModsNikkelMMusicMakerRandomizerShuffleFavorites",
-    DisplayName = "{CX} RANDOMIZE FAVORITES"
+    DisplayName = "{V} RANDOMIZE FAVORITES"
   }
 }
+-- {V} Inventory
+-- {CX} Codex (Issues for controller default mapping)
 
 local screenTextFile = rom.path.combine(rom.paths.Content, 'Game/Text/en/ScreenText.en.sjson')
 

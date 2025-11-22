@@ -1,10 +1,14 @@
 # Changelog
 
-## v3.0.3
+## v3.0.4
 
 <!--Releasenotes start-->
-- Fixed preview image in r2modman.
+- Changed the button to randomize songs to the "Open Inventory" binding to prevent an issue with the default controller mappings.
 <!--Releasenotes end-->
+
+## v3.0.3
+
+- Fixed preview image in r2modman.
 
 ## v3.0.2
 

@@ -6,7 +6,10 @@ local randomizerButton = {
 		OnMouseOverFunctionName = "MouseOverContextualAction",
 		OnMouseOffFunctionName = "MouseOffContextualAction",
 		OnPressedFunctionName = "ModsNikkelMMusicMakerRandomizerShuffleFavorites",
-		ControlHotkeys = { "Codex", },
+		ControlHotkeys = { "Inventory", },
+		-- Inventory == Inventory
+		-- Codex == Codex (Issues for controller default mapping)
+
 	},
 	Text = "ModsNikkelMMusicMakerRandomizerShuffleFavorites",
 	TextArgs = UIData.ContextualButtonFormatRight,
