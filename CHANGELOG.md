@@ -1,10 +1,14 @@
 # Changelog
 
-## v3.0.4
+## v3.0.5
 
 <!--Releasenotes start-->
-- Changed the button to randomize songs to the "Open Inventory" binding to prevent an issue with the default controller mappings.
+- Fixed a crash when starting a new save with the mod installed.
 <!--Releasenotes end-->
+
+## v3.0.4
+
+- Changed the button to randomize songs to the "Open Inventory" binding to prevent an issue with the default controller mappings.
 
 ## v3.0.3
 
