@@ -98,7 +98,22 @@ local function on_ready()
   import "Scripts/MusicPlayerPresentation.lua"
 	import "Scripts/PatchLogic.lua"
 
+  import "Game/Text/ScreenText.de.sjson.lua"
+  import "Game/Text/ScreenText.el.sjson.lua"
   import "Game/Text/ScreenText.en.sjson.lua"
+  import "Game/Text/ScreenText.es.sjson.lua"
+  import "Game/Text/ScreenText.fr.sjson.lua"
+  import "Game/Text/ScreenText.it.sjson.lua"
+  import "Game/Text/ScreenText.ja.sjson.lua"
+  import "Game/Text/ScreenText.ko.sjson.lua"
+  import "Game/Text/ScreenText.pl.sjson.lua"
+  import "Game/Text/ScreenText.pt-BR.sjson.lua"
+  import "Game/Text/ScreenText.ru.sjson.lua"
+  import "Game/Text/ScreenText.tr.sjson.lua"
+  import "Game/Text/ScreenText.uk.sjson.lua"
+  import "Game/Text/ScreenText.zh-CN.sjson.lua"
+  import "Game/Text/ScreenText.zh-TW.sjson.lua"
+
   import "Game/Animations/GUI_Screens_VFX.sjson.lua"
 end
 

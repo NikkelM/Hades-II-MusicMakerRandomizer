@@ -7,21 +7,21 @@ local order = {
 local newData = {
   {
     Id = "ModsNikkelMMusicMakerRandomizerFavoriteButton",
-    DisplayName = "{IP} ADD TO FAVORITES"
+    DisplayName = "{IP} ALS FAVORIT HINZUFÜGEN"
   },
   {
     Id = "ModsNikkelMMusicMakerRandomizerRemoveFavoriteButton",
-    DisplayName = "{IP} REMOVE FAVORITE"
+    DisplayName = "{IP} FAVORIT ENTFERNEN"
   },
   {
     Id = "ModsNikkelMMusicMakerRandomizerShuffleFavorites",
-    DisplayName = "{V} RANDOMIZE FAVORITES"
-  }
+    DisplayName = "{V} ZUFÄLLIG AUS FAVORITEN"
+  },
 }
 -- {V} Inventory
 -- {CX} Codex (Issues for controller default mapping)
 
-local screenTextFile = rom.path.combine(rom.paths.Content, 'Game/Text/en/ScreenText.en.sjson')
+local screenTextFile = rom.path.combine(rom.paths.Content, 'Game/Text/de/ScreenText.de.sjson')
 
 sjson.hook(screenTextFile, function(data)
   for _, newCommand in ipairs(newData) do

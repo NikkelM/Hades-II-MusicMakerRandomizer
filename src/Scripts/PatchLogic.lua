@@ -24,5 +24,5 @@ modutil.mod.Path.Wrap("DoPatches", function(base)
 		end
 	end
 
-	base()
+	return base()
 end)

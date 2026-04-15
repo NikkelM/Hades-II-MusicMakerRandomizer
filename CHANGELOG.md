@@ -1,10 +1,16 @@
 # Changelog
 
-## v3.0.5
+## v3.0.6
 
 <!--Releasenotes start-->
-- Fixed a crash when starting a new save with the mod installed.
+- Updated button texts.
+- Added support for localizations.
+- Added German localization.
 <!--Releasenotes end-->
+
+## v3.0.5
+
+- Fixed a crash when starting a new save with the mod installed.
 
 ## v3.0.4
 
