@@ -14,3 +14,18 @@ To further improve your musical experience in the Crossroads, consider installin
 
 - [Crossroad Singing Sirens](https://thunderstore.io/c/hades-ii/p/NikkelM/Crossroads_Singing_Sirens/) adds lyrical versions of the Siren's songs as unlockables to the Music Maker, after you have unlocked their base versions.
 - [Hades OST for the Music Maker](https://thunderstore.io/c/hades-ii/p/NikkelM/Hades_OST_for_the_Music_Maker/) adds songs from the Hades soundtrack (as played by Orpheus) as unlockables to the Music Maker.
+
+### Contribute
+
+You can contribute to this mod by providing a translation for your native language!
+To do so, follow these steps:
+
+- Open the `src/Game/Text/ScreenText.<language>.sjson.lua` file, where `<language>` is the shorthand of the language you would like to translate (e.g. `de` for German).
+- Remove the leading `--` from all lines in the `newData` table.
+- Translate the `DisplayName` entries. Do not change the `Id` values!
+- The character limit in the game is 20, for anything after the `{XX}` entries, which are placeholders for button icons. Do not change the `{XX}` texts.
+
+The mod is currently available in the following languages:
+
+- English
+- German
