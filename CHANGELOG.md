@@ -1,12 +1,17 @@
 # Changelog
 
-## v3.0.6
+## v3.0.7
 
 <!--Releasenotes start-->
+- Fixed: Shuffling immediately after unfavoriting a song may still choose it.
+- Hardened the mod against potential crashes if a favorited song no longer exists (e.g. due to another mod that added it being uninstalled).
+<!--Releasenotes end-->
+
+## v3.0.6
+
 - Updated button texts.
 - Added support for localizations.
 - Added German localization.
-<!--Releasenotes end-->
 
 ## v3.0.5
 
@@ -40,8 +45,7 @@
 
 ## v2.0.0
 
-- NEW: Mark songs as favorite and have the Music Maker randomize only from favorites through a new song choice:
-![Randomize Music Maker Song Choice - Unlock favorites](https://github.com/user-attachments/assets/09733994-5346-44eb-988e-af1f039a8faa)
+- Mark songs as favorite and have the Music Maker randomize only from favorites through a new song choice.
 
 ## v1.0.4
 

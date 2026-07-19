@@ -6,7 +6,7 @@ modutil.mod.Path.Wrap("GhostAdminPinItem", function(base, screen, button)
 	end
 
 	local itemName = screen.SelectedItem.Data.Name
-	if game.Contains(game.ScreenData.MusicPlayer.Songs, itemName) and game.Contains(game.GameState.UnlockedMusicPlayerSongs, itemName) then
+	if game.Contains(game.ScreenData.MusicPlayer.Songs, itemName) and game.GameState.WorldUpgrades[itemName] then
 		-- The song is not yet favorited
 		if not game.Contains(game.GameState.ModsNikkelMMusicMakerRandomizerFavoritedTracks, itemName) then
 			table.insert(game.GameState.ModsNikkelMMusicMakerRandomizerFavoritedTracks, itemName)
@@ -47,6 +47,12 @@ modutil.mod.Path.Wrap("GhostAdminPinItem", function(base, screen, button)
 			game.RemoveStoreItemPinPresentation(screen.SelectedItem)
 			ModifyTextBox({ Id = button.Id, Text = "ModsNikkelMMusicMakerRandomizerFavoriteButton" })
 		end
+
+		-- Favorites changed, so reset the playlist so it's rebuilt with/without the changed song
+		if game.GameState.ModsNikkelMMusicMakerRandomizerShufflingFromFavorites then
+			game.GameState.MusicPlayerPlaylist = nil
+		end
+
 		return
 	end
 

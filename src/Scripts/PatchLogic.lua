@@ -18,9 +18,30 @@ modutil.mod.Path.Wrap("DoPatches", function(base)
 			game.GameState.StoreItemPins = game.CollapseTable(game.GameState.StoreItemPins)
 		end
 
-		-- If no songs are favorited, favorite the default song to have at least one
-		if #game.GameState.ModsNikkelMMusicMakerRandomizerFavoritedTracks == 0 then
-			table.insert(game.GameState.ModsNikkelMMusicMakerRandomizerFavoritedTracks, "Song_MainTheme")
+		-- Clean out any favorited songs whose data no longer exists (e.g. an uninstalled or updated mod)
+		local favoritedTracks = game.GameState.ModsNikkelMMusicMakerRandomizerFavoritedTracks
+		for index = #favoritedTracks, 1, -1 do
+			if not game.WorldUpgradeData[favoritedTracks[index]] then
+				table.remove(favoritedTracks, index)
+			end
+		end
+
+		-- Keep at least one valid favorite so shuffling favorites always has something to play
+		if #favoritedTracks == 0 then
+			table.insert(favoritedTracks, "Song_MainTheme")
+		end
+
+		-- Also remove any outdated songs from the existing playlist if one exists
+		if game.GameState.ModsNikkelMMusicMakerRandomizerShufflingFromFavorites and game.GameState.MusicPlayerPlaylist ~= nil then
+			for index = #game.GameState.MusicPlayerPlaylist, 1, -1 do
+				if not game.WorldUpgradeData[game.GameState.MusicPlayerPlaylist[index]] then
+					table.remove(game.GameState.MusicPlayerPlaylist, index)
+				end
+			end
+
+			if #game.GameState.MusicPlayerPlaylist == 0 then
+				table.insert(game.GameState.MusicPlayerPlaylist, "Song_MainTheme")
+			end
 		end
 	end
 

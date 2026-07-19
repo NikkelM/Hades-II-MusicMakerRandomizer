@@ -6,6 +6,9 @@ Simply mark a song as favorite using the same button as for pinning incantations
 
 Will work with any songs added in the future, or through other mods.
 
+> If you favorite modded songs and then remove the mod(s) that added them, they will be unfavorited, even if you later reinstall those mods.
+> You will need to re-add them as favorites then.
+
 ![Favorite Songs](https://github.com/user-attachments/assets/acd43415-4e88-4435-b0d8-1daa3ce4b26e)
 
 ## Other related mods
